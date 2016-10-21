@@ -97,7 +97,8 @@ class Arena(pygame.sprite.Sprite):
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image, self.rect = load_image("sprites/player.png", -1)
+        self.i
+        mage, self.rect = load_image("sprites/player.png", -1)
         self.rect.center = (400,500)
         self.dx = 0
         self.dy = 0

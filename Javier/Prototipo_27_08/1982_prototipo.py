@@ -15,7 +15,7 @@ display_height = 320;
 gameDisplay = pygame.display.set_mode((display_width,display_height)); #Sets resolution
 pygame.display.set_caption('1982'); #Sets game's name.
 
-block_size = 10;
+block_size = 5;
 block_water_movement = 20;
 FPS = 25;
 
@@ -30,6 +30,7 @@ shipImg = pygame.image.load('coventry.gif')
 lead_x = 50;
 lead_y = 50;
 lead_y_change = 0;
+lead_X_change = 0;
 water_movement = 0;
 
 def blitImg(img,x,y):
@@ -47,8 +48,13 @@ while (not gameExit):
                 lead_y_change = -block_size;
             elif (event.key == pygame.K_DOWN):
                 lead_y_change = block_size;
+            elif (event.key == pygame.K_LEFT):
+                lead_X_change = -block_size;
+            elif (event.key == pygame.K_RIGHT):
+                lead_X_change = block_size;
 
     lead_y += lead_y_change;
+    lead_x += lead_X_change;
 
     if (water_movement == -block_water_movement):
         water_movement = 0;
